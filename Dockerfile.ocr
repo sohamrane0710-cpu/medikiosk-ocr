@@ -1,0 +1,38 @@
+# Dockerfile for Phase 1 PaddleOCR Container Compatibility Validation
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000 \
+    PADDLE_PDX_CACHE_HOME=/app/.cache/paddlex \
+    PADDLE_HOME=/app/.cache/paddle \
+    PADDLEOCR_HOME=/app/.cache/paddleocr \
+    PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK=True
+
+WORKDIR /app
+
+# Install system libraries needed by OpenCV & PaddlePaddle on Debian slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    libgomp1 \
+    libgl1 \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Security non-root user
+RUN groupadd -r appuser && useradd -r -g appuser -d /app -s /sbin/nologin appuser
+
+# Dependencies layer
+COPY requirements-ocr.txt /app/requirements-ocr.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements-ocr.txt
+
+# Application code & fixtures
+COPY app /app/app
+COPY tests/fixtures/ocr/images/printed_01.png /app/test_image.png
+
+RUN chown -R appuser:appuser /app
+USER appuser
+
+# Default command: run one test inference and print recognized text
+CMD ["python", "-c", "from app.services.ocr_engine import PaddleOCREngine; e = PaddleOCREngine.get_instance(); res = e.run_ocr('/app/test_image.png'); print('Docker OCR Success:', res.success); print('Recognized:', res.raw_text.splitlines()[:2])"]

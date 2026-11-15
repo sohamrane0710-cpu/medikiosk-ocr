@@ -1,0 +1,62 @@
+[
+  {
+    "technique": "Baseline (None)",
+    "description": "Raw original source images without preprocessing",
+    "overall_cer": 0.011,
+    "overall_wer": 0.0469,
+    "critical_accuracy": 0.9267,
+    "mean_time_sec": 2.4517,
+    "degraded_cer": 0.0238,
+    "degraded_wer": 0.1004
+  },
+  {
+    "technique": "grayscale",
+    "description": "Convert to grayscale and normalize 3-channel format",
+    "overall_cer": 0.0107,
+    "overall_wer": 0.0453,
+    "critical_accuracy": 0.9333,
+    "mean_time_sec": 2.8188,
+    "degraded_cer": 0.0237,
+    "degraded_wer": 0.1004
+  },
+  {
+    "technique": "contrast_clahe",
+    "description": "Adaptive histogram equalization (CLAHE)",
+    "overall_cer": 0.0111,
+    "overall_wer": 0.0442,
+    "critical_accuracy": 0.9333,
+    "mean_time_sec": 2.7307,
+    "degraded_cer": 0.0251,
+    "degraded_wer": 0.0972
+  },
+  {
+    "technique": "denoise",
+    "description": "Non-local means denoising filter",
+    "overall_cer": 0.0367,
+    "overall_wer": 0.0745,
+    "critical_accuracy": 0.94,
+    "mean_time_sec": 3.245,
+    "degraded_cer": 0.1019,
+    "degraded_wer": 0.1844
+  },
+  {
+    "technique": "deskew",
+    "description": "Contour orientation detection and affine deskew",
+    "overall_cer": 0.2818,
+    "overall_wer": 0.404,
+    "critical_accuracy": 0.7,
+    "mean_time_sec": 2.6966,
+    "degraded_cer": 0.1707,
+    "degraded_wer": 0.2815
+  },
+  {
+    "technique": "resize_1.5x",
+    "description": "Bicubic upsampling 1.5x scaling",
+    "overall_cer": 0.0134,
+    "overall_wer": 0.0721,
+    "critical_accuracy": 0.92,
+    "mean_time_sec": 4.1513,
+    "degraded_cer": 0.0277,
+    "degraded_wer": 0.1502
+  }
+]

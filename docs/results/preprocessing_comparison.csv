@@ -1,0 +1,7 @@
+technique,description,overall_cer,overall_wer,critical_accuracy,mean_time_sec,degraded_cer,degraded_wer
+Baseline (None),Raw original source images without preprocessing,0.011,0.0469,0.9267,2.4517,0.0238,0.1004
+grayscale,Convert to grayscale and normalize 3-channel format,0.0107,0.0453,0.9333,2.8188,0.0237,0.1004
+contrast_clahe,Adaptive histogram equalization (CLAHE),0.0111,0.0442,0.9333,2.7307,0.0251,0.0972
+denoise,Non-local means denoising filter,0.0367,0.0745,0.94,3.245,0.1019,0.1844
+deskew,Contour orientation detection and affine deskew,0.2818,0.404,0.7,2.6966,0.1707,0.2815
+resize_1.5x,Bicubic upsampling 1.5x scaling,0.0134,0.0721,0.92,4.1513,0.0277,0.1502

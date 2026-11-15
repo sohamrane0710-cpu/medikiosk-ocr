@@ -49,13 +49,15 @@ dmypy.json
 .pytype/
 .ruff_cache/
 
-# Virtual Environments
+# Virtual Environments & standalone runtimes
 .venv/
+.venv*/
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
+.python311-runtime/
 
 # Environment variables & secrets
 .env

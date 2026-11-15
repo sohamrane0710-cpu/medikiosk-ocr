@@ -1,0 +1,26 @@
+# ==============================================================================
+# Medikiosk OCR - Phase 1 OCR Experimentation Dependencies
+# Target: Python 3.11.10 (Linux x86_64 CPU Inference)
+# ==============================================================================
+# CPU wheel repository link for PaddlePaddle:
+--find-links https://www.paddlepaddle.org.cn/packages/stable/cpu/
+
+# Core deep learning framework (CPU-only build)
+paddlepaddle==3.2.0
+
+# OCR engine and unified document pipeline
+paddleocr==3.7.0
+paddlex==3.7.2
+
+# Critical compatibility pin: PaddlePaddle / OpenCV C-extensions require NumPy < 2.0
+numpy==1.26.4
+
+# Computer vision and image processing
+opencv-contrib-python==4.10.0.84
+Pillow>=10.0.0
+shapely==2.2.0
+pyclipper==1.4.0
+
+# Testing and benchmarking
+pytest>=8.0.0
+psutil>=5.9.0

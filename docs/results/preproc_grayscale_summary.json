@@ -1,0 +1,80 @@
+{
+  "suite_name": "preproc_grayscale",
+  "total_images": 30,
+  "engine_initialization_time_sec": 2.3573,
+  "cold_inference_time_sec": 2.761,
+  "warm_mean_inference_time_sec": 2.8208,
+  "overall_mean_inference_time_sec": 2.8188,
+  "overall_median_inference_time_sec": 2.8672,
+  "overall_min_inference_time_sec": 1.8387,
+  "overall_max_inference_time_sec": 3.7503,
+  "overall_mean_cer": 0.0107,
+  "overall_median_cer": 0.0,
+  "overall_mean_wer": 0.0453,
+  "overall_median_wer": 0.0,
+  "overall_mean_critical_accuracy": 0.9333,
+  "field_accuracies": {
+    "medicine_name": 0.9667,
+    "dosage": 0.9667,
+    "frequency": 0.8667,
+    "duration": 0.9333,
+    "numeric_instruction": 0.9333
+  },
+  "memory_rss_before_mb": 68.55,
+  "memory_rss_after_mb": 1922.65,
+  "memory_rss_growth_mb": 1854.11,
+  "cpu_percent_estimate": 91.9,
+  "category_summary": {
+    "printed": {
+      "count": 10,
+      "mean_cer": 0.0036,
+      "median_cer": 0.0,
+      "mean_wer": 0.007,
+      "median_wer": 0.0,
+      "mean_inference_time": 3.1931,
+      "median_inference_time": 3.1841,
+      "mean_critical_accuracy": 0.96,
+      "field_accuracies": {
+        "medicine_name": 1.0,
+        "dosage": 1.0,
+        "frequency": 1.0,
+        "duration": 0.8,
+        "numeric_instruction": 1.0
+      }
+    },
+    "handwritten": {
+      "count": 10,
+      "mean_cer": 0.0047,
+      "median_cer": 0.0075,
+      "mean_wer": 0.0284,
+      "median_wer": 0.0445,
+      "mean_inference_time": 2.3367,
+      "median_inference_time": 2.291,
+      "mean_critical_accuracy": 0.88,
+      "field_accuracies": {
+        "medicine_name": 1.0,
+        "dosage": 1.0,
+        "frequency": 0.6,
+        "duration": 1.0,
+        "numeric_instruction": 0.8
+      }
+    },
+    "degraded": {
+      "count": 10,
+      "mean_cer": 0.0237,
+      "median_cer": 0.0032,
+      "mean_wer": 0.1004,
+      "median_wer": 0.0384,
+      "mean_inference_time": 2.9266,
+      "median_inference_time": 2.9945,
+      "mean_critical_accuracy": 0.96,
+      "field_accuracies": {
+        "medicine_name": 0.9,
+        "dosage": 0.9,
+        "frequency": 1.0,
+        "duration": 1.0,
+        "numeric_instruction": 1.0
+      }
+    }
+  }
+}
